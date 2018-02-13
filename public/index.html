@@ -4,6 +4,19 @@
         <meta charset="utf8"/>
         <title>Interaction Engine - Hello You!</title>
         <script src="/socket.io/socket.io.js"></script>
+<style>
+  .column {
+      float: left;
+      width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+</style>
     </head>
     <body>
         <body bgcolor="#000">
@@ -11,7 +24,14 @@
         <button onclick="ledOFF()">LED OFF</button>
         <button onclick="takePicture()">Take a picture</button>
       </br>
-        <img src="" id= "pictureContainer" alt="WebCam image  made by the webserver">
+<div class="row">
+  <div class="column">
+    <img src="" id= "pictureContainer" alt="WebCam image  made by the webserver">
+  </div>
+  <div class="column">
+    <p id="analysisContainer" style="color:white">Awaiting analysis...</p>
+  </div>
+</div>
         <script src="client.js"></script>
     </body>
 </html>
